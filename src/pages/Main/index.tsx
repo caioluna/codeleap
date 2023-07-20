@@ -55,7 +55,8 @@ export function Main() {
 
   const { data, isSuccess, refetch, hasNextPage, fetchNextPage } = useInfiniteQuery(['posts'], getPosts,
     {
-      getNextPageParam: (lastPage, pages) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      getNextPageParam: (lastPage, _pages) => {
         if (lastPage.next !== null) {
           return lastPage.next
         }
